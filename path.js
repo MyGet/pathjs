@@ -190,7 +190,7 @@ Path.core.route.prototype = {
             }
         }
         if (!halt_execution) {
-            Path.routes.defined[this.path].action();
+            Path.routes.defined[this.path].action(this.params);
         }
     }
 };
