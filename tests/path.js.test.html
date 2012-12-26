@@ -116,10 +116,14 @@
 			});
 
                         Path.map("#H(/:id_one)(/:id_two)").to(function(){
-	                    var id_one = this.params["id_one"] || "N/A";
-	                    var id_two = this.params["id_two"] || "N/A";
-                            update("H(one=" + id_one + ", two=" + id_two + ")");
-                        });
+							var id_one = this.params["id_one"] || "N/A";
+							var id_two = this.params["id_two"] || "N/A";
+							update("H(one=" + id_one + ", two=" + id_two + ")");
+						});
+						
+						Path.map("#I(/:id)").to(function(){
+							update("I[action](parse id=" + this.params['id'] + ")");
+						});
 			
 			Path.rescue(function(){
 			    update("RESCUE");
