@@ -74,7 +74,9 @@ var Path = {
                             route.params = params;
                         }
                         return route;
-                    }
+                    } else {
+						params = {};
+					}
                 }
             }
         }
